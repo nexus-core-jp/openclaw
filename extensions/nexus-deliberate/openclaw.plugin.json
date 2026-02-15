@@ -1,0 +1,34 @@
+{
+  "id": "nexus-deliberate",
+  "name": "Nexus Deliberate",
+  "description": "Nexus Sphere 合議エンジンの OpenClaw 移植。マルチ LLM を 8 視点で並列実行し、Harmony Index でコンセンサスを計算する。",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "defaultProviders": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Default provider/model keys (e.g. [\"openai/gpt-4o\", \"anthropic/claude-sonnet-4-5-20250929\"])"
+      },
+      "defaultAuthProfileId": { "type": "string" },
+      "consensusThreshold": {
+        "type": "number",
+        "description": "Harmony threshold for quorum (0-1, default 0.66)"
+      },
+      "timeoutMs": {
+        "type": "number",
+        "description": "Timeout per LLM call in milliseconds (default 60000)"
+      },
+      "maxTokens": { "type": "number" },
+      "enableAdversarial": {
+        "type": "boolean",
+        "description": "Enable Adversarial Deliberation (Devil's Advocate). Default: true"
+      },
+      "rateLimitPerMinute": {
+        "type": "number",
+        "description": "HTTP API rate limit per client IP (requests/minute, default 10)"
+      }
+    }
+  }
+}

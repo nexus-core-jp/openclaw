@@ -1,0 +1,14 @@
+{
+  "name": "@openclaw/nexus-deliberate",
+  "version": "0.1.0",
+  "description": "Nexus Sphere 合議エンジンの OpenClaw 移植。マルチ LLM × 8 視点 × Harmony Index コンセンサス。",
+  "type": "module",
+  "devDependencies": {
+    "openclaw": "workspace:*"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
